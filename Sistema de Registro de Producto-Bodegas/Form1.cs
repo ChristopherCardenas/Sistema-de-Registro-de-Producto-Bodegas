@@ -21,5 +21,10 @@ namespace Sistema_de_Registro_de_Producto_Bodegas
         {
 
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
