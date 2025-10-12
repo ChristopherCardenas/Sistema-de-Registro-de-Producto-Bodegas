@@ -40,11 +40,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNombreProducto = new System.Windows.Forms.TextBox();
-            this.txtPrecio = new System.Windows.Forms.TextBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtCodigoProducto = new System.Windows.Forms.TextBox();
+            this.comboBoxPrecios = new System.Windows.Forms.ComboBox();
             this.barraLateral.SuspendLayout();
             this.panel1.SuspendLayout();
             this.listProductos.SuspendLayout();
@@ -68,10 +70,11 @@
             // TituloSistema
             // 
             this.TituloSistema.AutoSize = true;
+            this.TituloSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TituloSistema.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.TituloSistema.Location = new System.Drawing.Point(13, 27);
             this.TituloSistema.Name = "TituloSistema";
-            this.TituloSistema.Size = new System.Drawing.Size(177, 13);
+            this.TituloSistema.Size = new System.Drawing.Size(202, 15);
             this.TituloSistema.TabIndex = 1;
             this.TituloSistema.Text = "Registro de Productos - BodegaSoft";
             this.TituloSistema.Click += new System.EventHandler(this.label1_Click);
@@ -80,14 +83,16 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlText;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.comboBoxPrecios);
+            this.panel1.Controls.Add(this.txtCodigoProducto);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.btnRegistrar);
-            this.panel1.Controls.Add(this.txtPrecio);
             this.panel1.Controls.Add(this.txtNombreProducto);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(240, 65);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(259, 238);
+            this.panel1.Size = new System.Drawing.Size(259, 311);
             this.panel1.TabIndex = 2;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -178,25 +183,18 @@
             // 
             // txtNombreProducto
             // 
+            this.txtNombreProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreProducto.Location = new System.Drawing.Point(18, 44);
             this.txtNombreProducto.Name = "txtNombreProducto";
-            this.txtNombreProducto.Size = new System.Drawing.Size(223, 20);
+            this.txtNombreProducto.Size = new System.Drawing.Size(223, 21);
             this.txtNombreProducto.TabIndex = 2;
             this.txtNombreProducto.TextChanged += new System.EventHandler(this.txtNombreProducto_TextChanged);
-            // 
-            // txtPrecio
-            // 
-            this.txtPrecio.Location = new System.Drawing.Point(18, 112);
-            this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(223, 20);
-            this.txtPrecio.TabIndex = 3;
-            this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
             // 
             // btnRegistrar
             // 
             this.btnRegistrar.BackColor = System.Drawing.SystemColors.HotTrack;
             this.btnRegistrar.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnRegistrar.Location = new System.Drawing.Point(18, 168);
+            this.btnRegistrar.Location = new System.Drawing.Point(18, 247);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(223, 43);
             this.btnRegistrar.TabIndex = 4;
@@ -207,6 +205,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(14, 19);
             this.dataGridView1.Name = "dataGridView1";
@@ -217,10 +216,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
             this.label3.Location = new System.Drawing.Point(237, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(104, 13);
+            this.label3.Size = new System.Drawing.Size(122, 15);
             this.label3.TabIndex = 4;
             this.label3.Text = "Inicio - Administrador";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -229,12 +229,41 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Menu;
-            this.label4.Location = new System.Drawing.Point(401, 585);
+            this.label4.Location = new System.Drawing.Point(383, 583);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(416, 13);
+            this.label4.Size = new System.Drawing.Size(473, 15);
             this.label4.TabIndex = 11;
             this.label4.Text = "© 2025 BodegaSoft – Sistema de Gestión de Bodega. Todos los derechos reservados.";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.Window;
+            this.label5.Location = new System.Drawing.Point(15, 157);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(101, 13);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Codigo de Producto";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // txtCodigoProducto
+            // 
+            this.txtCodigoProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigoProducto.Location = new System.Drawing.Point(18, 190);
+            this.txtCodigoProducto.Name = "txtCodigoProducto";
+            this.txtCodigoProducto.Size = new System.Drawing.Size(223, 21);
+            this.txtCodigoProducto.TabIndex = 6;
+            // 
+            // comboBoxPrecios
+            // 
+            this.comboBoxPrecios.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBoxPrecios.FormattingEnabled = true;
+            this.comboBoxPrecios.Location = new System.Drawing.Point(18, 112);
+            this.comboBoxPrecios.Name = "comboBoxPrecios";
+            this.comboBoxPrecios.Size = new System.Drawing.Size(223, 23);
+            this.comboBoxPrecios.TabIndex = 7;
             // 
             // Form1
             // 
@@ -275,11 +304,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnRegistrar;
-        private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox txtNombreProducto;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBoxPrecios;
+        private System.Windows.Forms.TextBox txtCodigoProducto;
     }
 }
 

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.listProductosBuscar = new System.Windows.Forms.Panel();
+            this.lblResultado = new System.Windows.Forms.Label();
             this.panel1Buscar = new System.Windows.Forms.Panel();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtBuscarCodigo = new System.Windows.Forms.TextBox();
@@ -43,19 +44,34 @@
             this.buttonInicio = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.listProductosBuscar.SuspendLayout();
             this.panel1Buscar.SuspendLayout();
             this.barraLateral.SuspendLayout();
             this.SuspendLayout();
             // 
             // listProductosBuscar
             // 
+            this.listProductosBuscar.Controls.Add(this.label5);
+            this.listProductosBuscar.Controls.Add(this.lblResultado);
             this.listProductosBuscar.Location = new System.Drawing.Point(239, 161);
             this.listProductosBuscar.Name = "listProductosBuscar";
             this.listProductosBuscar.Size = new System.Drawing.Size(789, 383);
             this.listProductosBuscar.TabIndex = 8;
             // 
+            // lblResultado
+            // 
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.ForeColor = System.Drawing.SystemColors.Window;
+            this.lblResultado.Location = new System.Drawing.Point(22, 40);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(0, 13);
+            this.lblResultado.TabIndex = 0;
+            this.lblResultado.Click += new System.EventHandler(this.lblResultado_Click);
+            // 
             // panel1Buscar
             // 
+            this.panel1Buscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1Buscar.Controls.Add(this.btnBuscar);
             this.panel1Buscar.Controls.Add(this.txtBuscarCodigo);
             this.panel1Buscar.Controls.Add(this.label2);
@@ -78,9 +94,10 @@
             // 
             // txtBuscarCodigo
             // 
+            this.txtBuscarCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarCodigo.Location = new System.Drawing.Point(22, 45);
             this.txtBuscarCodigo.Name = "txtBuscarCodigo";
-            this.txtBuscarCodigo.Size = new System.Drawing.Size(223, 20);
+            this.txtBuscarCodigo.Size = new System.Drawing.Size(223, 21);
             this.txtBuscarCodigo.TabIndex = 2;
             this.txtBuscarCodigo.TextChanged += new System.EventHandler(this.txtNombreProducto_TextChanged);
             // 
@@ -107,10 +124,11 @@
             // TituloSistema
             // 
             this.TituloSistema.AutoSize = true;
+            this.TituloSistema.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TituloSistema.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.TituloSistema.Location = new System.Drawing.Point(12, 26);
             this.TituloSistema.Name = "TituloSistema";
-            this.TituloSistema.Size = new System.Drawing.Size(177, 13);
+            this.TituloSistema.Size = new System.Drawing.Size(202, 15);
             this.TituloSistema.TabIndex = 6;
             this.TituloSistema.Text = "Registro de Productos - BodegaSoft";
             // 
@@ -166,6 +184,7 @@
             this.buttonReportes.TabIndex = 1;
             this.buttonReportes.Text = "Reportes";
             this.buttonReportes.UseVisualStyleBackColor = true;
+            this.buttonReportes.Click += new System.EventHandler(this.buttonReportes_Click);
             // 
             // buttonInicio
             // 
@@ -180,10 +199,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.Window;
             this.label3.Location = new System.Drawing.Point(236, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 13);
+            this.label3.Size = new System.Drawing.Size(189, 15);
             this.label3.TabIndex = 9;
             this.label3.Text = "Buscar Productos - Administrador";
             // 
@@ -191,12 +211,23 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Menu;
             this.label4.Location = new System.Drawing.Point(408, 598);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(416, 13);
+            this.label4.Size = new System.Drawing.Size(473, 15);
             this.label4.TabIndex = 10;
             this.label4.Text = "© 2025 BodegaSoft – Sistema de Gestión de Bodega. Todos los derechos reservados.";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.Window;
+            this.label5.Location = new System.Drawing.Point(25, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(135, 13);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Resultado de la Busqueda:";
             // 
             // Form2
             // 
@@ -212,6 +243,8 @@
             this.Controls.Add(this.label3);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.listProductosBuscar.ResumeLayout(false);
+            this.listProductosBuscar.PerformLayout();
             this.panel1Buscar.ResumeLayout(false);
             this.panel1Buscar.PerformLayout();
             this.barraLateral.ResumeLayout(false);
@@ -237,5 +270,7 @@
         private System.Windows.Forms.Button buttonInicio;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblResultado;
+        private System.Windows.Forms.Label label5;
     }
 }
