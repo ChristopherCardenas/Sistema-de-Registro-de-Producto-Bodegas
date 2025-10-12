@@ -34,8 +34,8 @@ namespace Sistema_de_Registro_de_Producto_Bodegas
 
             if (result == DialogResult.Yes)
             {
-                // Cerrar el formulario actual
-                this.Hide();
+                // Cerrar todo
+                Application.Exit();
             }
         }
     }
