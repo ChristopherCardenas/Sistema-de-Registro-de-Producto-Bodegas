@@ -43,6 +43,8 @@
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.barraLateral.SuspendLayout();
             this.panel1.SuspendLayout();
             this.listProductos.SuspendLayout();
@@ -61,6 +63,7 @@
             this.barraLateral.Name = "barraLateral";
             this.barraLateral.Size = new System.Drawing.Size(203, 536);
             this.barraLateral.TabIndex = 0;
+            this.barraLateral.Paint += new System.Windows.Forms.PaintEventHandler(this.barraLateral_Paint);
             // 
             // TituloSistema
             // 
@@ -68,13 +71,15 @@
             this.TituloSistema.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.TituloSistema.Location = new System.Drawing.Point(13, 27);
             this.TituloSistema.Name = "TituloSistema";
-            this.TituloSistema.Size = new System.Drawing.Size(158, 13);
+            this.TituloSistema.Size = new System.Drawing.Size(177, 13);
             this.TituloSistema.TabIndex = 1;
-            this.TituloSistema.Text = "Registro de Productos - Bodega";
+            this.TituloSistema.Text = "Registro de Productos - BodegaSoft";
             this.TituloSistema.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.ControlText;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnRegistrar);
             this.panel1.Controls.Add(this.txtPrecio);
             this.panel1.Controls.Add(this.txtNombreProducto);
@@ -84,6 +89,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(259, 238);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // listProductos
             // 
@@ -92,6 +98,7 @@
             this.listProductos.Name = "listProductos";
             this.listProductos.Size = new System.Drawing.Size(536, 498);
             this.listProductos.TabIndex = 3;
+            this.listProductos.Paint += new System.Windows.Forms.PaintEventHandler(this.listProductos_Paint);
             // 
             // buttonInicio
             // 
@@ -101,6 +108,7 @@
             this.buttonInicio.TabIndex = 0;
             this.buttonInicio.Text = "Inicio";
             this.buttonInicio.UseVisualStyleBackColor = true;
+            this.buttonInicio.Click += new System.EventHandler(this.buttonInicio_Click);
             // 
             // buttonReportes
             // 
@@ -110,6 +118,7 @@
             this.buttonReportes.TabIndex = 1;
             this.buttonReportes.Text = "Reportes";
             this.buttonReportes.UseVisualStyleBackColor = true;
+            this.buttonReportes.Click += new System.EventHandler(this.buttonReportes_Click);
             // 
             // buttonBuscarProducto
             // 
@@ -119,6 +128,7 @@
             this.buttonBuscarProducto.TabIndex = 2;
             this.buttonBuscarProducto.Text = "Buscar Productos";
             this.buttonBuscarProducto.UseVisualStyleBackColor = true;
+            this.buttonBuscarProducto.Click += new System.EventHandler(this.buttonBuscarProducto_Click);
             // 
             // buttonBienvenida
             // 
@@ -128,6 +138,7 @@
             this.buttonBienvenida.TabIndex = 3;
             this.buttonBienvenida.Text = "Bienvenido ADMIN";
             this.buttonBienvenida.UseVisualStyleBackColor = true;
+            this.buttonBienvenida.Click += new System.EventHandler(this.buttonBienvenida_Click);
             // 
             // buttonCerrar
             // 
@@ -140,6 +151,7 @@
             this.buttonCerrar.TabIndex = 4;
             this.buttonCerrar.Text = "Cerrar Sesion";
             this.buttonCerrar.UseVisualStyleBackColor = false;
+            this.buttonCerrar.Click += new System.EventHandler(this.buttonCerrar_Click);
             // 
             // label1
             // 
@@ -151,6 +163,7 @@
             this.label1.Size = new System.Drawing.Size(107, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre del Producto";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // label2
             // 
@@ -161,6 +174,7 @@
             this.label2.Size = new System.Drawing.Size(61, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "Precio (S/.)";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtNombreProducto
             // 
@@ -168,6 +182,7 @@
             this.txtNombreProducto.Name = "txtNombreProducto";
             this.txtNombreProducto.Size = new System.Drawing.Size(223, 20);
             this.txtNombreProducto.TabIndex = 2;
+            this.txtNombreProducto.TextChanged += new System.EventHandler(this.txtNombreProducto_TextChanged);
             // 
             // txtPrecio
             // 
@@ -175,6 +190,7 @@
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(223, 20);
             this.txtPrecio.TabIndex = 3;
+            this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
             // 
             // btnRegistrar
             // 
@@ -186,6 +202,7 @@
             this.btnRegistrar.TabIndex = 4;
             this.btnRegistrar.Text = "Registrar Producto";
             this.btnRegistrar.UseVisualStyleBackColor = false;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // dataGridView1
             // 
@@ -195,6 +212,29 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(505, 464);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.Window;
+            this.label3.Location = new System.Drawing.Point(237, 27);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(104, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Inicio - Administrador";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label4.ForeColor = System.Drawing.SystemColors.Menu;
+            this.label4.Location = new System.Drawing.Point(401, 585);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(416, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "© 2025 BodegaSoft – Sistema de Gestión de Bodega. Todos los derechos reservados.";
             // 
             // Form1
             // 
@@ -202,6 +242,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.ClientSize = new System.Drawing.Size(1070, 610);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.listProductos);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TituloSistema);
@@ -236,6 +278,8 @@
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.TextBox txtNombreProducto;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 
