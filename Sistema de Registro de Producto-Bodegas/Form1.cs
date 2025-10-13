@@ -75,7 +75,7 @@ namespace Sistema_de_Registro_de_Producto_Bodegas
         {
             Form2 form2 = new Form2(); 
             form2.Show();
-            this.Close();
+            
         }
 
         /// <summary>
