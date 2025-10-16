@@ -10,25 +10,13 @@ using System.Windows.Forms;
 
 namespace Sistema_de_Registro_de_Producto_Bodegas
 {
-    /// <summary>
-    /// Formulario principal para el registro y visualización de productos en la bodega.
-    /// Permite registrar productos, visualizar la lista y acceder a otras funcionalidades.
-    /// </summary>
     public partial class Form1 : Form
     {
-        /// <summary>
-        /// Inicializa una nueva instancia del formulario Form1 y lo centra en pantalla.
-        /// </summary>
         public Form1()
         {
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
         }
-
-        /// <summary>
-        /// Registra un nuevo producto si no existe previamente.
-        /// Asocia el nombre, código y precio seleccionado.
-        /// </summary>
         
         private void RegistrarProducto(string nombre, string codigo, int indicePrecio)
         {
@@ -46,9 +34,6 @@ namespace Sistema_de_Registro_de_Producto_Bodegas
             }
         }
 
-        /// <summary>
-        /// Evento de carga del formulario. Inicializa los precios y las columnas de la tabla.
-        /// </summary>
         private void Form1_Load(object sender, EventArgs e)
         {
             comboBoxPrecios.Items.Clear();
@@ -68,19 +53,12 @@ namespace Sistema_de_Registro_de_Producto_Bodegas
 
         private void label1_Click(object sender, EventArgs e) { }
 
-        /// <summary>
-        /// Abre el formulario de búsqueda de productos y cierra el formulario actual.
-        /// </summary>
         private void buttonBuscarProducto_Click(object sender, EventArgs e)
         {
             Form2 form2 = new Form2(); 
             form2.Show();
-            
         }
 
-        /// <summary>
-        /// Cierra la sesión del usuario tras confirmación.
-        /// </summary>
         private void buttonCerrar_Click(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show("¿Seguro que deseas cerrar sesión?", "Cerrar sesión", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -94,9 +72,6 @@ namespace Sistema_de_Registro_de_Producto_Bodegas
         private void listProductos_Paint(object sender, PaintEventArgs e) { }
         private void buttonInicio_Click(object sender, EventArgs e) { }
 
-        /// <summary>
-        /// Muestra un mensaje indicando que la funcionalidad de reportes no está implementada.
-        /// </summary>
         private void buttonReportes_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Funcionalidad no implementada. Espera la siguiente versión.", "Reportes", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -109,9 +84,6 @@ namespace Sistema_de_Registro_de_Producto_Bodegas
         private void txtNombreProducto_TextChanged(object sender, EventArgs e) { }
         private void txtPrecio_TextChanged(object sender, EventArgs e) { }
 
-        /// <summary>
-        /// Valida los campos y registra el producto al presionar el botón Registrar.
-        /// </summary>
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             string nombre = txtNombreProducto.Text;
@@ -133,9 +105,6 @@ namespace Sistema_de_Registro_de_Producto_Bodegas
         private void label3_Click(object sender, EventArgs e) { }
         private void label5_Click(object sender, EventArgs e) { }
 
-        /// <summary>
-        /// Actualiza la visualización de la tabla de productos.
-        /// </summary>
         private void ActualizarDataGridView()
         {
             dataGridView1.Rows.Clear();
